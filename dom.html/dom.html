@@ -4,17 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style>
+      .container {
+        width: 500px;
+        height: 400px;
+        font-size: 200px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    </style>
   </head>
-  <style>
-    .container {
-      width: 500px;
-      height: 400px;
-      font-size: 200px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-  </style>
   <body>
     <script>
       const container = document.createElement("div");
@@ -24,7 +24,6 @@
       //   header.classList.add("header");
       const email = document.createElement("input");
       email.placeholder = " Enter your email";
-      container.classList.add("container");
 
       const password = document.createElement("input");
       password.placeholder = "Enter your password";
