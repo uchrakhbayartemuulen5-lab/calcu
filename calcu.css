@@ -1,0 +1,80 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.hur {
+  width: 300px;
+}
+
+.main {
+  width: 300px;
+  height: 80px;
+  background-color: green;
+
+  border-radius: 20px;
+  margin-bottom: 10px;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+
+  padding: 15px;
+  font-size: 34px;
+  color: white;
+  overflow: hidden;
+}
+
+.hairtsag {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+
+  padding: 20px;
+  width: 300px;
+  height: 500px;
+  border: white;
+
+  background-color: green;
+  border-radius: 20px;
+}
+
+.ur {
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
+  font-size: 20px;
+  color: green;
+  cursor: pointer;
+  border: none;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: transform 0.1s ease;
+}
+
+.ur:hover {
+  transform: scale(1.05);
+}
+
+.zero {
+  grid-column: span 2;
+  width: 100%;
+  border-radius: 999px;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  background-image: url(NBA.webp);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}

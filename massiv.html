@@ -1,0 +1,196 @@
+-<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <header>
+    <style>
+      .header {
+        width: 1000px;
+        color: blue;
+        font-size: 30px;
+      }
+    </style>
+  </header>
+
+  <body>
+    <script>
+      // Өгөгдсөн массивын гишүүдийн нийлбэрийг ол. [12,98,80,80,76,27]
+
+      //   const nums = [12, 98, 80, 80, 76, 27];
+      //   let sum = 0;
+      //   for (let i = 0; i < nums.length; i++) {
+      //     sum += nums[i];
+      //   }
+      //   console.log(sum);
+
+      // Өгөгдсөн массивын 0-ээс их элементүүдийн нийлбэрийг ол.[2,-2,-4,9,80,76,89]
+      //   const nums = [2, -2, -4, 9, 80, 76, 89];
+      //   let sum = 0;
+      //   for (let i = 0; i < nums.length; i++) {
+      //     if (nums[i] > 0) {
+      //       sum += nums[i];
+      //     }
+      //   }
+      //   console.log(sum);
+      // Өгөгдсөн массивын хамгийн бага элементийг ол.[12,45,67,2,67,4,7]
+      //   const nums = [12, 45, 67, 2, 67, 4, 7];
+      //   let min = nums[0];
+      //   for (let i = 0; i < nums.length; i++) {
+      //     if (min > nums[i]) {
+      //       min = nums[i];
+      //     }
+      //   }
+      //   console.log(min);
+      // Өгөгдсөн массивын хамгийн их элемент хэд дэх нь вэ?
+      // Хэрэв хамгийн их элементийн тоо 1-ээс олон бол бага
+      // дугаарыг нь хэвлэнэ.[12,1,25,67,87,90,98]
+      //   const nums = [12, 1, 25, 67, 87, 90, 98];
+      //   let min = nums[0];
+      //   for (let i = 0; i < nums.length; i++) {
+      //     if (min < nums[i]) {
+      //       min = nums[i];
+      //     }
+      //   }
+      //   console.log(min);
+    </script>
+    <script>
+      // 1. Өгөгдсөн Массивийн элэментүүдийг эсрэг дарааллаар буцаа
+      //   const nums = [5, 3, 7, 2, 3, 4];
+      //   for (let i = nums.length - 1; i >= 0; i--) {
+      //     console.log(nums[i]);
+      //   }
+      //  2. Хөрш элэментүүдээсээ их буюу орой элэментүүдийн тоог буцаа
+      // const arr = [12, 1, 25, 67, 87, 90, 98];
+      // let peaks = [];
+      // let index = 0;
+      // for (let i = 0; i < arr.length; i++) {
+      //   if (i === 0) {
+      //     if (arr[i] > arr[i + 1]) {
+      //       peaks[index] = arr[i];
+      //       index++;
+      //     }
+      //   } else if (i === arr.length - 1) {
+      //     if (arr[i] > arr[i-1]){
+      //       peaks[index] = arr[i];
+      //     index++;
+      //     }
+      //   }else {
+      //     if(arr[i] > arr[i-1] && arr[i]> arr[i+1]){
+      //          peaks[index] = arr[i];
+      //       index++;
+      //     }
+      //   }
+      // console.log(peaks);
+      // const arr = [12, 46, 23, 103, 100, 87, 90, 98];
+      // let oroi = [];
+      // for (let i = 0; i < arr.length; i++) {
+      //   if (arr[i] > arr[i - 1] && arr[i] > arr[i + 1]) {
+      //     oroi.push(arr[i]);
+      //   }
+      // }
+      // console.log(oroi);
+
+      //  3. Өгөгдсөн массивийн бүх хосыг хэвлэ[ 12,23,43,78,54,45]
+      // const num = [12, 23, 43, 78, 54, 45];
+      // for (let i = 0; i <= num.length - 1; i++)
+      //   for (let h = i + 1; h <= num.length - 1; h++)
+      //     console.log(num[i], num[h]);
+
+      // 4. Массив болон тоо өгөгдөв. Нийлбэр нь өгөгдсөн тоотой тэнцүү байдаг хосын тоог ол
+      // const num = [4, 6, 8, 2, 5, 7, 23, 43, 56, 1, 3, 9, 10, 10];
+      // const x = 13;
+      // let bum = 0;
+      // for (let i = 0; i <= num.length; i++) {
+      //   for (let g = i + 1; g <= num.length; g++) {
+      //     if (num[i] + num[g] === x) {
+      //       bum++;
+      //     }
+      //   }
+      // }
+      // console.log(bum);
+
+      //  5. Өгөгдсөн 2 массивийн огтлолцлыг ол[34,68,89,34,23]
+      // const num = [34, 89, 65, 23];
+      // const sum = [56, 32, 54, 89];
+      // let bum = [];
+      // for (let i = 0; i < num.length; i++) {
+      //   for (let h = 0; h < sum.length; h++) {
+      //     if (num[i] === sum[h]) {
+      //       bum.push(num[i]);
+      //     }
+      //   }
+      // }
+      // console.log(bum);
+
+      //  6. Өгөгдсөн массивийн сөрөг тоонуудыг зүүн талд нь байрлуул
+      // const num = [12, -34, -6, -5, -46, 24, 53];
+      // for (let i = 0; i < num.length; i++) num.sort((a, b) => a - b);
+      // console.log(num);
+      // 7. Дараалсан тоонуудаас бүрдэх массив өгөгдөх байсан боловч 1 тоо нь дутуу байв.
+      //  Тэр тоог ол
+      // const num = [1, 2, 3, 4, 5, 6, 7, 9];
+      // for (let i = 0; i < num.length; i++) {
+      //   if (num[i + 1] - num[i] !== 1) {
+      //     console.log(num[i] + 1);
+      //   }
+      // }
+
+      // function num(a, b) {
+      //   return a + b;
+      // }
+      // let answer = num(3, 4) * num(2, 3);
+      // console.log(answer);
+
+      // 1. Массив болон тоо өгөгдөв.
+      // Өгөгдсөн тоо массив байгаа бол дугаарыг нь, байхгүй бол -1 буцаа
+      //
+      // function num(nums) {
+      //   for (let i = 0; i < num.length; i++) {
+      //     if (num[i] == nums);
+      //     {
+      //       return [i];
+      //     }
+      //   }
+      // }
+      // let hariu = num(1, 2, 3, 4, 5, 6, 7, 23);
+      // console.log(hariu);
+      //  2. Өгөгдсөн массивын элементүүдийг хойш нь нэг цикл шилжилт хий.
+      // Өөрөөр хэлбэл 1-рийг 2-рт, 2-рыг 3-рт, гэх мэт сүүлийн элементийг 1-рт тус тус шилжүүл.
+      //      Жич: 1 2 3 4 {5 -> 5 1 2 3 4
+      //   function num (bum){
+      //     sum = 0;
+      //     for (let i = bum.length-1 i>0; i--){
+      //       nums[i]=nums[i]-1
+      //     }
+      //      console.log(bum[i]);
+      //   }
+      // let hariu= num ([1,2,3,4,5,6,7,8,9,10])
+      //  3. Өгөгдсөн массив өсөх эрэмбээр байвал true үгүй бол false буцаа
+      //  4. HackerLand University has the following grading policy:
+      //          - Every student receives a  in the inclusive range from  to .
+      //          - Any  less than  is a failing grade.
+      //      Sam is a professor at the university and likes to round each student's  according to these rules:
+      //      If the difference between the  and the next multiple of  is less than , round  up to the next multiple of .
+      //      If the value of  is less than , no rounding occurs as the result will still be a failing grade.
+      //      Examples:
+      //      84 - round to  (85 - 84 is less than 3)
+      //      28 - do not round (result is less than 40)
+      //      57 - do not round (60 - 57 is 3 or higher)
+    </script>
+    <script>
+      const container = document.createElement("div");
+      const header = document.createElement("h1");
+      header.innerText = " this is a header";
+      container.appendChild(header);
+      const input1 = document.createElement("input");
+      header.classList.add("header");
+      container.appendChild(header);
+      container.appendChild(input1);
+
+      document.body.appendChild(container);
+    </script>
+  </body>
+</html>
